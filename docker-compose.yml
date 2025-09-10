@@ -1,0 +1,6 @@
+name: redisqs
+
+services:
+
+  redis-server:
+    container_name: redisqs-redis-server

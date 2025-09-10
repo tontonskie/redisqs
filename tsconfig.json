@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "noErrorTruncation": true,
+    "target": "es2023",
+    "skipLibCheck": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "module": "commonjs",
+    "declaration": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "outDir": "./dist",
+    "baseUrl": "./",
+    "incremental": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "paths": {
+      "@/testing/*": ["./testing/*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", "coverage"]
+}
