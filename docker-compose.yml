@@ -2,5 +2,29 @@ name: redisqs
 
 services:
 
-  redis-server:
-    container_name: redisqs-redis-server
+  redis-7-cluster-server:
+    container_name: redisqs-redis-7-cluster-server
+    image: grokzen/redis-cluster:7.0.15
+    environment:
+      - INITIAL_PORT=3005
+      - MASTERS=3
+      - SLAVES_PER_MASTER=0
+    healthcheck:
+      test: "redis-cli -p 3005 ping"
+      interval: 1s
+      timeout: 3s
+      retries: 30
+
+  dev:
+    container_name: redisqs-dev
+    build: .
+    command: sleep infinity
+    depends_on:
+      redis-7-cluster-server:
+        condition: service_healthy
+    volumes:
+      - .:/redisqs
+      - dev_node_modules:/redisqs/node_modules
+
+volumes:
+  dev_node_modules:

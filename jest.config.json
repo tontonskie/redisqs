@@ -1,6 +1,6 @@
 {
   "rootDir": ".",
-  "roots": ["<rootDir>/testing"],
+  "roots": ["<rootDir>/testing", "<rootDir>/src"],
   "testEnvironment": "node",
   "testRegex": ".*\\.spec\\.ts$",
   "testTimeout": 30000,
@@ -10,7 +10,7 @@
   "collectCoverage": true,
   "coverageDirectory": "<rootDir>/coverage",
   "coverageReporters": ["html-spa", "text-summary"],
-  "collectCoverageFrom": ["src/**/*.(t|j)s", "!src/db/migrations/**/*.ts"],
+  "collectCoverageFrom": ["src/**/*.(t|j)s"],
   "coverageThreshold": {
     "global": {
       "branches": 50,
@@ -22,7 +22,5 @@
     "^.+\\.(t|j)s$": "@swc/jest"
   },
   "transformIgnorePatterns": ["/node_modules/"],
-  "moduleFileExtensions": ["js", "json", "ts"],
-  "snapshotSerializers": ["<rootDir>/testing/serializer.ts"],
-  "setupFilesAfterEnv": ["jest-extended/all", "<rootDir>/testing/hooks.ts"]
+  "moduleFileExtensions": ["js", "json", "ts"]
 }
