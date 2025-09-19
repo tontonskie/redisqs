@@ -36,12 +36,9 @@ export class Connection {
     }
   }
 
-  async disconnect() {
+  disconnect() {
     if (this.client.isOpen) {
       this.client.destroy()
-      await new Promise<void>(resolve => {
-        this.client.once('end', () => resolve())
-      })
     }
   }
 }
