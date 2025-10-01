@@ -26,8 +26,7 @@ export default defineConfig(
       eqeqeq: ['error', 'smart'],
       'no-duplicate-imports': 'error',
       'jest/prefer-hooks-on-top': 'error',
-      'jest/consistent-test-it': ['error', { fn: 'test' }],
-      '@typescript-eslint/no-explicit-any': 'off'
+      'jest/consistent-test-it': ['error', { fn: 'test' }]
     }
   }
 )

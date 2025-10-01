@@ -16,6 +16,7 @@ COPY package.json .
 COPY package-lock.json .
 RUN mkdir -p node_modules && chown node:node node_modules && npm ci --include=dev
 
+COPY .gitignore .
 COPY .prettierignore .
 COPY .prettierrc.json .
 COPY .swcrc .
